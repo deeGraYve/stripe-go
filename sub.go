@@ -24,8 +24,7 @@ type SubscriptionParams struct {
 	BillingCycleAnchor        int64                      `form:"billing_cycle_anchor"`
 	BillingCycleAnchorNow     bool                       `form:"-"` // See custom AppendTo
 	Card                      *CardParams                `form:"card"`
-	Coupon                    string                     `form:"coupon"`
-	CouponEmpty               bool                       `form:"coupon,empty"`
+	Coupon                    *string                    `form:"coupon"`
 	Customer                  string                     `form:"customer"`
 	DaysUntilDue              uint64                     `form:"days_until_due"`
 	Items                     []*SubscriptionItemsParams `form:"items,indexed"`

@@ -11,8 +11,7 @@ type CustomerParams struct {
 	AccountBalance     int64                    `form:"account_balance"`
 	AccountBalanceZero bool                     `form:"account_balance,zero"`
 	BusinessVatID      string                   `form:"business_vat_id"`
-	Coupon             string                   `form:"coupon"`
-	CouponEmpty        bool                     `form:"coupon,empty"`
+	Coupon             *string                  `form:"coupon"`
 	DefaultSource      string                   `form:"default_source"`
 	Description        string                   `form:"description"`
 	Email              string                   `form:"email"`
