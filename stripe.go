@@ -519,6 +519,21 @@ func IntValue(v *int) int {
 	return 0
 }
 
+// UInt returns a pointer to the uint value passed in.
+func UInt(v uint) *uint {
+	return &v
+}
+
+// UIntValue returns the value of the uint pointer passed in or
+// 0 if the pointer is nil.
+func UIntValue(v *uint) uint {
+	if v != nil {
+		return *v
+	}
+	return 0
+}
+
+
 // Int64 returns a pointer to the int64 value passed in.
 func Int64(v int64) *int64 {
 	return &v
@@ -541,6 +556,20 @@ func UInt64(v uint64) *uint64 {
 // UInt64Value returns the value of the uint64 pointer passed in or
 // 0 if the pointer is nil.
 func UInt64Value(v *uint64) uint64 {
+	if v != nil {
+		return *v
+	}
+	return 0
+}
+
+// Float32 returns a pointer to the float32 value passed in.
+func Float32(v float32) *float32 {
+	return &v
+}
+
+// Float32Value returns the value of the float32 pointer passed in or
+// 0 if the pointer is nil.
+func Float32Value(v *float32) float32 {
 	if v != nil {
 		return *v
 	}
