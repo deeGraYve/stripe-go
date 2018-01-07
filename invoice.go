@@ -14,8 +14,7 @@ type InvoiceBilling string
 // For more details see https://stripe.com/docs/api#create_invoice, https://stripe.com/docs/api#update_invoice.
 type InvoiceParams struct {
 	Params              `form:"*"`
-	ApplicationFee      uint64         `form:"application_fee"`
-	ApplicationFeeZero  bool           `form:"application_fee,zero"`
+	ApplicationFee      *uint64        `form:"application_fee"`
 	Billing             InvoiceBilling `form:"billing"`
 	Closed              *bool          `form:"closed"`
 	Customer            string         `form:"customer"`
@@ -26,8 +25,7 @@ type InvoiceParams struct {
 	Paid                bool           `form:"paid"`
 	StatementDescriptor string         `form:"statement_descriptor"`
 	Subscription        string         `form:"subscription"`
-	TaxPercent          float64        `form:"tax_percent"`
-	TaxPercentZero      bool           `form:"tax_percent,zero"`
+	TaxPercent          *float64       `form:"tax_percent"`
 
 	// These are all for exclusive use by GetNext.
 
@@ -35,8 +33,7 @@ type InvoiceParams struct {
 	SubscriptionPlan          string                     `form:"subscription_plan"`
 	SubscriptionProrate       *bool                      `form:"subscription_prorate"`
 	SubscriptionProrationDate int64                      `form:"subscription_proration_date"`
-	SubscriptionQuantity      uint64                     `form:"subscription_quantity"`
-	SubscriptionQuantityZero  bool                       `form:"subscription_quantity,zero"`
+	SubscriptionQuantity      *uint64                    `form:"subscription_quantity"`
 	SubscriptionTrialEnd      int64                      `form:"subscription_trial_end"`
 }
 
