@@ -43,7 +43,7 @@ type InvoiceItem struct {
 	Plan         *Plan             `json:"plan"`
 	Proration    bool              `json:"proration"`
 	Quantity     int64             `json:"quantity"`
-	Subscription string            `json:"subscription"`
+	Subscription *Subscription     `json:"subscription"`
 }
 
 // InvoiceItemList is a list of invoice items as retrieved from a list endpoint.
