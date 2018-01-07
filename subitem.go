@@ -5,8 +5,8 @@ package stripe
 type SubscriptionItemParams struct {
 	Params        `form:"*"`
 	ID            string `form:"-"` // Handled in URL
-	NoProrate     bool   `form:"prorate,invert"`
 	Plan          string `form:"plan"`
+	Prorate       *bool  `form:"prorate"`
 	ProrationDate int64  `form:"proration_date"`
 	Quantity      uint64 `form:"quantity"`
 	QuantityZero  bool   `form:"quantity,zero"`

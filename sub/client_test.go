@@ -60,7 +60,7 @@ func TestSubscriptionNew_WithItems(t *testing.T) {
 
 func TestSubscriptionUpdate(t *testing.T) {
 	subscription, err := Update("sub_123", &stripe.SubscriptionParams{
-		NoProrate:      true,
+		Prorate:        stripe.Bool(true),
 		QuantityZero:   true,
 		TaxPercentZero: true,
 	})

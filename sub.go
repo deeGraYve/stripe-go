@@ -29,9 +29,9 @@ type SubscriptionParams struct {
 	Customer                  string                     `form:"customer"`
 	DaysUntilDue              uint64                     `form:"days_until_due"`
 	Items                     []*SubscriptionItemsParams `form:"items,indexed"`
-	NoProrate                 bool                       `form:"prorate,invert"`
 	OnBehalfOf                string                     `form:"on_behalf_of"`
 	Plan                      string                     `form:"plan"`
+	Prorate                   *bool                      `form:"prorate"`
 	ProrationDate             int64                      `form:"proration_date"`
 	Quantity                  uint64                     `form:"quantity"`
 	QuantityZero              bool                       `form:"quantity,zero"`

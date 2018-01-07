@@ -117,13 +117,13 @@ func (p *AccountExternalAccountParams) AppendTo(body *form.Values, keyParts []st
 type PayoutScheduleParams struct {
 	DelayDays     uint64   `form:"delay_days"`
 	Interval      Interval `form:"interval"`
-	MinimumDelay  bool     `form:"-"` // See custom AppendTo
+	MinimumDelay  *bool    `form:"-"` // See custom AppendTo
 	MonthlyAnchor uint64   `form:"monthly_anchor"`
 	WeeklyAnchor  string   `form:"weekly_anchor"`
 }
 
 func (p *PayoutScheduleParams) AppendTo(body *form.Values, keyParts []string) {
-	if p.MinimumDelay {
+	if BoolValue(p.MinimumDelay) {
 		body.Add(form.FormatKey(append(keyParts, "delay_days")), "minimum")
 	}
 }

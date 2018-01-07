@@ -17,13 +17,12 @@ type InvoiceParams struct {
 	ApplicationFee      uint64         `form:"application_fee"`
 	ApplicationFeeZero  bool           `form:"application_fee,zero"`
 	Billing             InvoiceBilling `form:"billing"`
-	Closed              bool           `form:"closed"`
+	Closed              *bool          `form:"closed"`
 	Customer            string         `form:"customer"`
 	DaysUntilDue        uint64         `form:"days_until_due"`
 	Description         string         `form:"description"`
 	DueDate             int64          `form:"due_date"`
 	Forgiven            bool           `form:"forgiven"`
-	NoClosed            bool           `form:"closed,invert"`
 	Paid                bool           `form:"paid"`
 	StatementDescriptor string         `form:"statement_descriptor"`
 	Subscription        string         `form:"subscription"`
@@ -33,8 +32,8 @@ type InvoiceParams struct {
 	// These are all for exclusive use by GetNext.
 
 	SubscriptionItems         []*SubscriptionItemsParams `form:"subscription_items,indexed"`
-	SubscriptionNoProrate     bool                       `form:"subscription_prorate,invert"`
 	SubscriptionPlan          string                     `form:"subscription_plan"`
+	SubscriptionProrate       *bool                      `form:"subscription_prorate"`
 	SubscriptionProrationDate int64                      `form:"subscription_proration_date"`
 	SubscriptionQuantity      uint64                     `form:"subscription_quantity"`
 	SubscriptionQuantityZero  bool                       `form:"subscription_quantity,zero"`
