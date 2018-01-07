@@ -135,7 +135,7 @@ type DisputeEvidence struct {
 type File struct {
 	Created  int64  `json:"created"`
 	ID       string `json:"id"`
-	MimeType string `json:"mime_type"`
+	MIMEType string `json:"mime_type"`
 	Purpose  string `json:"purpose"`
 	Size     int    `json:"size"`
 	URL      string `json:"url"`
