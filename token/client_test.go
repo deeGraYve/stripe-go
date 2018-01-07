@@ -63,7 +63,7 @@ func TestTokenNew_SharedCustomerCard(t *testing.T) {
 
 func TestTokenNew_SharedCustomerBankAccount(t *testing.T) {
 	params := &stripe.TokenParams{
-		Bank: &stripe.BankAccountParams{
+		BankAccount: &stripe.BankAccountParams{
 			ID: "ba_123",
 		},
 		Customer: "cus_123",
