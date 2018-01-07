@@ -66,13 +66,12 @@ type AccountParams struct {
 	BusinessPrimaryColor      string                        `form:"business_primary_color"`
 	BusinessURL               string                        `form:"business_url"`
 	Country                   string                        `form:"country"`
-	DebitNegativeBalances     bool                          `form:"debit_negative_balances"`
+	DebitNegativeBalances     *bool                         `form:"debit_negative_balances"`
 	DefaultCurrency           string                        `form:"default_currency"`
 	Email                     string                        `form:"email"`
 	ExternalAccount           *AccountExternalAccountParams `form:"external_account"`
 	FromRecipient             string                        `form:"from_recipient"`
 	LegalEntity               *LegalEntity                  `form:"legal_entity"`
-	NoDebitNegativeBalances   bool                          `form:"debit_negative_balances,invert"`
 	PayoutSchedule            *PayoutScheduleParams         `form:"payout_schedule"`
 	PayoutStatementDescriptor string                        `form:"payout_statement_descriptor"`
 	ProductDescription        string                        `form:"product_description"`
