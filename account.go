@@ -115,15 +115,15 @@ func (p *AccountExternalAccountParams) AppendTo(body *form.Values, keyParts []st
 
 // PayoutScheduleParams are the parameters allowed for payout schedules.
 type PayoutScheduleParams struct {
-	DelayDays     uint64   `form:"delay_days"`
-	Interval      Interval `form:"interval"`
-	MinimumDelay  *bool    `form:"-"` // See custom AppendTo
-	MonthlyAnchor uint64   `form:"monthly_anchor"`
-	WeeklyAnchor  string   `form:"weekly_anchor"`
+	DelayDays        uint64   `form:"delay_days"`
+	DelayDaysMinimum *bool    `form:"-"` // See custom AppendTo
+	Interval         Interval `form:"interval"`
+	MonthlyAnchor    uint64   `form:"monthly_anchor"`
+	WeeklyAnchor     string   `form:"weekly_anchor"`
 }
 
 func (p *PayoutScheduleParams) AppendTo(body *form.Values, keyParts []string) {
-	if BoolValue(p.MinimumDelay) {
+	if BoolValue(p.DelayDaysMinimum) {
 		body.Add(form.FormatKey(append(keyParts, "delay_days")), "minimum")
 	}
 }
