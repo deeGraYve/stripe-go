@@ -76,7 +76,7 @@ type RecipientTransfer struct {
 	Recipient           *Recipient                   `json:"recipient"`
 	Reversals           *ReversalList                `json:"reversals"`
 	Reversed            bool                         `json:"reversed"`
-	SourceTransation    *BalanceTransactionSource    `json:"source_transaction"`
+	SourceTransaction   *BalanceTransactionSource    `json:"source_transaction"`
 	SourceType          RecipientTransferSourceType  `json:"source_type"`
 	StatementDescriptor string                       `json:"statement_descriptor"`
 	Status              RecipientTransferStatus      `json:"status"`

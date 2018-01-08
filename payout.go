@@ -85,7 +85,7 @@ type Payout struct {
 	ArrivalDate               int64               `json:"arrival_date"`
 	Automatic                 bool                `json:"automatic"`
 	BalanceTransaction        *BalanceTransaction `json:"balance_transaction"`
-	BankAccoun                *BankAccount        `json:"bank_account"`
+	BankAccount               *BankAccount        `json:"bank_account"`
 	Card                      *Card               `json:"card"`
 	Created                   int64               `json:"created"`
 	Currency                  Currency            `json:"currency"`
